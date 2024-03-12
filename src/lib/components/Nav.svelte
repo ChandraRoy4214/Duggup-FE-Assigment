@@ -17,9 +17,9 @@
 
     <div class="flex justify-center items-center gap-10 text-linkGray" >
         {#each links as link}
-          <a  href={link.url} class="flex items-center gap-2" >
+          <a  href={link.url} class="flex items-center gap-2 w-16" >
             <img src={link.icon} alt="Home Icon" class='w-6 h-6' >
-            <p class='text-sm' >{link.text}</p>
+            <p class='text-sm hover:font-medium' >{link.text}</p>
           </a>
         {/each}
 
