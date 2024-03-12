@@ -13,7 +13,11 @@
 </script>
 
 <nav class="py-4 pr-2 border-b border-dotted border-borderGray flex items-center justify-between sticky top-0 left-0 w-[100%] bg-white" >
-        <img src={Logo} alt="Logo">
+       
+  
+  <a href={'/'} >
+    <img src={Logo} alt="Logo">
+  </a>
 
     <div class="flex justify-center items-center gap-10 text-linkGray" >
         {#each links as link}
