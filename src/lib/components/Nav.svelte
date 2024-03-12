@@ -28,7 +28,7 @@
           Post 
         </button>
 
-        <div class="flex items-center gap-3 text-linkGray" >
+        <div class="flex items-center gap-3 text-linkGray cursor-pointer" >
           <img src={Profile} alt="Profile Pic" class='w-12 h-12 border border-[#4D4D4D] rounded-full' >
           <h2 class="font-medium"> Krishna Kiran </h2>
           <span class='w-4 h-4' ><FaChevronDown/></span>
