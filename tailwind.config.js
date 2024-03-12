@@ -6,12 +6,6 @@ const config = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   safelist: ['dark'],
   theme: {
-    fontFamily: {
-      primary: ['Lato', 'sans-serif'],
-      secondary: ['Inter', 'sans-serif'],
-      tertiary: ['Roboto', 'sans-serif'],
-    },
-
     container: {
       center: true,
       padding: '2rem',
@@ -60,6 +54,7 @@ const config = {
         darkGray: '#141618',
         borderGray: '#778FB1',
         blue: '#0066FF',
+        linkGray: '#4D4D4D',
       },
 
       borderRadius: {
@@ -69,7 +64,8 @@ const config = {
       },
 
       boxShadow: {
-        bm: '0px 5px 0px 0px #4D4D4D',
+        bsm: '5px 2px 0px 0px #4D4D4D',
+        bmd: '0px 5px 0px 0px #4D4D4D',
       },
       fontFamily: {
         sans: [...fontFamily.sans],

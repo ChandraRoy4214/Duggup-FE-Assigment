@@ -1,14 +1,19 @@
 <script lang="ts">
-
-    let Profile : string = '../../images/Profile.png'
+    import { writable } from 'svelte/store';
+    let ProfileLg : string = '../../images/ProfileLg.svg'
     let LogoIconLg : string = '../../images/LogoIconLg.png'
-  
-  </script>
+    let ExtLink : string = '../../images/ExtLink.svg'
+    let isActive = writable(false);
+
+    function toggleActive() {
+        isActive.update(value => !value);
+    }
+</script>
 
 
 <article class="flex gap-12 items-center" >
     <div class="flex flex-col justify-center items-center max-w-fit" >
-        <img alt={'Profile'} src={Profile} />
+        <img alt={'Profile picture'} src={ProfileLg} />
         <h1 class="font-bold text-2xl text-gray2 mx-auto w-32 text-center" >Krishna Kiran</h1>
     </div>
 
@@ -17,16 +22,32 @@
 
         </p>
 
-        <button class="py-1.5 px-8 border border-[#4D4D4D] rounded-md shadow-bm flex items-center gap-2 hover:bg-[#0066FF] hover:shadow-md hover:shadow-[#003A91] hover:text-white hover:border-[#0066FF] mt-10 " > 
-            Follow
-         </button>
+       
+
+         <button class={`${isActive ? 'shadow-bmd' : 'shadow-bms'} py-1.5 px-8 border border-[#4D4D4D] rounded-md flex items-center gap-2 hover:bg-[#0066FF] hover:shadow-md hover:shadow-[#003A91] hover:text-white hover:border-[#0066FF] mt-10 transition-all duration-300`} on:click={toggleActive}>
+            {#if $isActive}
+              Followed
+            {:else}
+              Follow
+            {/if}
+          </button>
     </div>
 
-    <div class="flex flex-col items-end" >
+    <div class="flex flex-col items-end min-w-fit" >
         <img alt={'Profile'} src={LogoIconLg} />
         <h4 class="font-bold" > Duggup </h4>
-        <p class="min-w-fit truncate" > Co-Founder and CEO </p>
+        <p class="min-w-fit text-sm truncate text-gray1" > Co-Founder and CEO </p>
 
-        <p class="mt-7" > My Website </p>
+        <div class="flex justify-end items-center gap-4 mt-5" >
+            <div class="flex items-center gap-1" >
+                <p class=" text-linkGray text-sm min-w-fit" > My Website </p>
+                <img src={ExtLink} alt="External Link" class='w-4 h-4' >
+            </div>
+            <div class="flex gap-1" >
+                <p class="w-1.5 h-1.5 bg-gray1 rounded-full" ></p>
+                <p class="w-1.5 h-1.5 bg-gray1 rounded-full" ></p>
+                <p class="w-1.5 h-1.5 bg-gray1 rounded-full" ></p>
+            </div>
+        </div>
     </div>
 </article>

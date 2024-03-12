@@ -1,46 +1,38 @@
 
 <script>
-import FaPlus from 'svelte-icons/fa/FaPlus.svelte'
+	import FaPlus  from 'svelte-icons/fa/FaPlus.svelte';
+  import FaChevronDown from 'svelte-icons/fa/FaChevronDown.svelte'
   let links = [
-    { text: 'Home', url: '#' },
-    { text: 'Explore', url: '#' },
-    { text: 'Learn', url: '#' },
+    { text: 'Home', url: '#' , icon: '../../images/HomeIcon.svg'},
+    { text: 'Explore', url: '#', icon: '../../images/Icon.svg' },
+    { text: 'Learn', url: '#', icon: '../../images/Story.svg' },
   ];
 
-  let Logo = '../../images/LogoIconSm.png';
+  let Logo = '../../images/Logo.svg';
   let Profile = '../../images/Profile.png';
-
-
 </script>
 
-<nav class=" py-2 pb-3 pr-2 border-b border-dotted border-borderGray flex items-center justify-between" >
+<nav class="py-2 pb-3 pr-2 border-b border-dotted border-borderGray flex items-center justify-between" >
+        <img src={Logo} alt="Logo">
 
-<div class='flex items-center gap-1'>
+    <div class="flex justify-center items-center gap-10 text-linkGray" >
+        {#each links as link}
+          <a  href={link.url} class="flex items-center gap-2" >
+            <img src={link.icon} alt="Home Icon" class='w-6 h-6' >
+            <p class='text-sm' >{link.text}</p>
+          </a>
+        {/each}
 
-<div>
-<img src={Logo} alt="Description of the image">
-</div>
+        <button class="py-1.5 px-8 border border-[#4D4D4D] rounded-md shadow-bmd flex items-center gap-2" > 
+          <p class='w-4 h-4 font-light border border-black rounded-sm' > <FaPlus/> </p> 
+          Post 
+        </button>
 
-<p class='font-semibold text-[#333333]' > duggup </p>
-</div>
-
-<div class="flex justify-center items-center gap-10" >
-{#each links as link}
-<div class="flex items-center gap-2" >
-<p class='w-4 h-4 rounded-full bg-black' ></p>
-<a href={link.url}>{link.text}</a>
-</div>
-{/each}
-
-<button class="py-1.5 px-8 border border-[#4D4D4D] rounded-md shadow-bm flex items-center gap-2" > <p class='w-4 h-4 font-light border border-black rounded-sm' > <FaPlus/> </p> Post </button>
-
-<div class="flex items-center gap-3" >
-<img src={Profile} alt="Profile Pic" class='w-12 h-12 border border-[#4D4D4D] rounded-full' >
-
-<h2 class="font-semibold"> Krishna Kiran </h2>
-</div>
-</div>
-
-
+        <div class="flex items-center gap-3 text-linkGray" >
+          <img src={Profile} alt="Profile Pic" class='w-12 h-12 border border-[#4D4D4D] rounded-full' >
+          <h2 class="font-medium"> Krishna Kiran </h2>
+          <span class='w-4 h-4' ><FaChevronDown/></span>
+        </div>
+    </div>
 </nav>
 

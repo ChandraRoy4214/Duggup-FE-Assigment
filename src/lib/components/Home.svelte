@@ -1,5 +1,6 @@
 <script>
-  import CardsContainer from "./CardsContainer.svelte";
+  import FaChevronUp from "svelte-icons/fa/FaChevronUp.svelte";
+import CardsContainer from "./CardsContainer.svelte";
   let LogoIconLg = '../../images/LogoIconLg.png';
   let BetterUp = '../../images/BetterUp.png';
 </script>
@@ -22,7 +23,8 @@
     <!-- next one -->
     <div class="w-[60px] mb-10 " >
         <div class='h-[80px] relative w-[60px]' >
-            <div class=' gap-3  flex ' >
+            <p class='w-4 h-4 absolute -right-[9px] bg-white text-borderGray -top-8' ><FaChevronUp/></p>
+            <div class=' gap-3  flex' >
                 <div class="flex flex-col items-end absolute -top-2 right-8 text-xs " >
                     <img alt={'Profile'} src={LogoIconLg} />
                     <h4 class="font-bold text-sm" > Duggup </h4>
@@ -53,7 +55,8 @@
     <!-- next one -->
     <div class="w-[60px]" >
         <div class='h-[80px] relative w-[60px] mb-40' >
-            <div class=' gap-3  flex ' >
+            <p class='w-4 h-4 absolute -right-[9px] bg-white text-borderGray -top-8' ><FaChevronUp/></p>
+            <div class='gap-3 flex' >
                 <div class="flex flex-col items-end absolute -top-2 right-8 text-xs " >
                     <img alt={'Profile'} src={BetterUp} />
                     <h4 class="font-bold text-sm" > BetterUp </h4>
